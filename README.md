@@ -1,6 +1,6 @@
 # Time Solo 
 
-**Time Solo** is a gamified productivity and personal development app for 12-18-year-olds, aiming to benefit users of any age. It draws parallels between real life and MMORPGs, encouraging users to view personal growth as leveling up, achieving goals as completing quests, and building wealth and relationships as managing inventory and social panels.
+**Time Solo** is a gamified productivity and personal development app that draws parallels between real life and MMORPGs, encouraging users to view personal growth as leveling up, achieving goals as completing quests, and building wealth and relationships as managing inventory and social panels. It makes personal development engaging by turning life's journey into an RPG adventure, where every decision and achievement is a step towards leveling up.
 
 ## Concept Overview
 - **Age = Levels**: Progress through life like gaining levels in an MMORPG.
