@@ -14,9 +14,10 @@
       <div class="login-overlay">
         <form @submit.prevent="handleLogin" class="login-form">
           <input type="text" v-model="username" placeholder="Username" required />
-          <input type="password" v-model="password" placeholder="Password" required />
+          <input type="password" v-model="password" placeholder="Password" required minlength="8" />
           <button type="submit">Login</button>
         </form>
+        <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
         <a @click="switchToRegister" class="create-credentials">Create Credentials</a>
       </div>
     </div>
@@ -29,6 +30,9 @@
 <script>
 import Logo from './Logo.vue';
 import RegisterForm from './RegisterForm.vue';
+import PocketBase from 'pocketbase';
+
+const pb = new PocketBase('http://127.0.0.1:8090'); // Change to your PocketBase server URL
 
 export default {
   components: {
@@ -40,12 +44,25 @@ export default {
       username: '',
       password: '',
       showLogin: true, // Controls whether login or register is shown
-      showConfirmation: false, // Controls whether the confirmation image is shown
+      errorMessage: '', // Error message for failed login
     };
   },
   methods: {
-    handleLogin() {
-      // Authentication logic here
+    async handleLogin() {
+      if (this.password.length < 8) {
+        this.errorMessage = 'Password must be at least 8 characters long.';
+        return;
+      }
+
+      try {
+        const authData = await pb.collection('users').authWithPassword(this.username, this.password);
+        if (authData) {
+          this.$router.push('/');
+        }
+      } catch (error) {
+        console.error('Error logging in:', error);
+        this.errorMessage = 'Invalid username or password';
+      }
     },
     switchToRegister() {
       this.showLogin = false;
@@ -65,6 +82,12 @@ export default {
   color: red;
   text-decoration: underline;
   cursor: pointer;
+  margin-top: 10px;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
   margin-top: 10px;
 }
 
@@ -133,5 +156,4 @@ export default {
 .login-form button:hover {
   background-color: darkred;
 }
-
 </style>

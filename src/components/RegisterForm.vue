@@ -6,13 +6,14 @@
       <input type="password" v-model="passwordConfirm" placeholder="Confirm Password" required minlength="8" />
       <button type="submit">Save Credentials</button>
     </form>
+    <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
   </div>
 </template>
 
 <script>
 import PocketBase from 'pocketbase';
 
-const pb = new PocketBase('http://127.0.0.1:8090'); // Change to your Pocketbase server URL
+const pb = new PocketBase('http://127.0.0.1:8090'); // Change to your PocketBase server URL
 
 export default {
   data() {
@@ -20,19 +21,23 @@ export default {
       username: '',
       password: '',
       passwordConfirm: '',
+      errorMessage: '', // Error message for registration issues
     };
   },
   methods: {
     async handleRegister() {
+      // Reset error message
+      this.errorMessage = '';
+
       // Validate password length
       if (this.password.length < 8) {
-        this.displayNotification('Password must be at least 8 characters long!');
+        this.errorMessage = 'Password must be at least 8 characters long!';
         return;
       }
 
       // Validate password match
       if (this.password !== this.passwordConfirm) {
-        this.displayNotification('Passwords do not match!');
+        this.errorMessage = 'Passwords do not match!';
         return;
       }
 
@@ -45,10 +50,15 @@ export default {
 
         // Create user in PocketBase
         await pb.collection('users').create(data);
-        this.$emit('registrationSuccess'); 
+        this.$emit('registrationSuccess'); // Emit success event
       } catch (error) {
         console.error('Error creating account:', error);
-        this.displayNotification('There was an error creating your account. Please try again.');
+        // Check if the error is due to an existing username
+        if (error.isPocketBase && error.data && error.data.username) {
+          this.errorMessage = 'Username already exists';
+        } else {
+          this.errorMessage = 'Invalid Username or Password';
+        }
       }
     },
   },
@@ -69,6 +79,12 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
 }
 
 .register-form input {

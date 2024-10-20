@@ -2,6 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Login from './components/Login.vue';
 import Home from './components/Home.vue';
 import RegisterForm from './components/RegisterForm.vue'; // Import RegisterForm
+import PocketBase from 'pocketbase';
+
+const pb = new PocketBase('http://127.0.0.1:8090'); // Change to your PocketBase server URL
 
 const routes = [
   { path: '/login', component: Login },
@@ -23,8 +26,7 @@ router.beforeEach((to, from, next) => {
 });
 
 function isUserAuthenticated() {
-  // Implement your authentication logic here
-  return false; // Placeholder
+  return pb.authStore.isValid; // Check if the user is authenticated
 }
 
 export default router;
