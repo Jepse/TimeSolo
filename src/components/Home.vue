@@ -1,0 +1,14 @@
+<template>
+    <div>
+      <h1>Home Page</h1>
+      <p>Welcome to the home page!</p>
+    </div>
+  </template>
+  
+  <script setup>
+  /* Add your scripts here */
+  </script>
+  
+  <style scoped>
+  /* Add your styles here */
+  </style>
