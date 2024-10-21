@@ -18,9 +18,8 @@
 - **Cross-Platform Portability**: Planned import/export functionality to transition data between PC and future mobile versions.
 
 ### Core Feature Implementation
-1. **User Authentication**: Set up basic authentication and data management with Pocketbase.
-2. **Gamification Elements**: Develop features for levels, quests, inventory, and social panels.
-3. **Timeline Interface**: Implement an interactive timeline to visualize progress.
+1. **Gamification Elements**: Develop features for levels, quests, inventory, and social panels.
+2. **Timeline Interface**: Implement an interactive timeline to visualize progress.
 
 ### Data Security & Testing
 1. Implement data encryption to ensure privacy.
