@@ -1,5 +1,8 @@
 # Time Solo 
 
+![Login](https://github.com/user-attachments/assets/95f81a02-1683-475e-8429-d3b8dc029e7f)
+
+
 **Time Solo** is a gamified productivity and personal development app that draws parallels between real life and MMORPG games, encouraging users to view personal growth as leveling up, achieving goals as completing quests, and building wealth and relationships as managing inventory and social panels. It makes personal development engaging by turning life's journey into a game experience, where every decision and achievement is a step towards leveling up...
 
 ## Concept Overview
