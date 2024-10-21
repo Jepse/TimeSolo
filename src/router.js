@@ -7,9 +7,9 @@ import PocketBase from 'pocketbase';
 const pb = new PocketBase('http://127.0.0.1:8090'); // Change to your PocketBase server URL
 
 const routes = [
-  { path: '/login', component: Login },
-  { path: '/', component: Home, meta: { requiresAuth: true } },
-  { path: '/register', component: RegisterForm } // Add route for RegisterForm
+  { path: '/login', name: 'Login', component: Login },
+  { path: '/', name: 'Home', component: Home, meta: { requiresAuth: true } },
+  { path: '/register', name: 'Register', component: RegisterForm } // Add route for RegisterForm
 ];
 
 const router = createRouter({

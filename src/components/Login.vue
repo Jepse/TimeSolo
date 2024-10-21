@@ -1,8 +1,12 @@
 <template>
   <div class="login-page">
+    <!-- Attribution -->
+    <div class="video-attribution">
+      Background by <a href="https://pixabay.com/users/dangrafart-8220761/?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=202844">Daniel</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=202844">Pixabay</a>
+    </div>
     <!-- Background Video -->
-    <video autoplay loop muted class="background-video">
-      <source src="../assets/clockBG.mp4" type="video/mp4" />
+    <video autoplay loop muted class="background-video" :style="{ opacity: videoOpacity, transition: 'opacity 1s' }">
+      <source src="../assets/videos/enchantedBG.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
 
@@ -18,12 +22,13 @@
           <button type="submit">Login</button>
         </form>
         <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
-        <a @click="switchToRegister" class="create-credentials">Create Credentials</a>
+        <a @click="switchToRegister" class="create-credentials">Create Account</a>
       </div>
     </div>
 
     <!-- Register Form -->
     <RegisterForm v-if="!showLogin" @switchToLogin="switchToLogin" @registrationSuccess="handleRegistrationSuccess" />
+
   </div>
 </template>
 
@@ -45,6 +50,7 @@ export default {
       password: '',
       showLogin: true, // Controls whether login or register is shown
       errorMessage: '', // Error message for failed login
+      videoOpacity: 1, // Controls the opacity of the background video
     };
   },
   methods: {
@@ -57,7 +63,10 @@ export default {
       try {
         const authData = await pb.collection('users').authWithPassword(this.username, this.password);
         if (authData) {
-          this.$router.push('/');
+          this.videoOpacity = 0; // Trigger fade-out effect
+          setTimeout(() => {
+            this.$router.push('/');
+          }, 700); // Delay navigation to allow fade-out effect
         }
       } catch (error) {
         console.error('Error logging in:', error);
@@ -83,6 +92,8 @@ export default {
   text-decoration: underline;
   cursor: pointer;
   margin-top: 10px;
+  text-align: center;
+  display: block; /* Ensures it's treated as a block element */
 }
 
 .error-message {
@@ -95,6 +106,10 @@ export default {
   position: relative;
   width: 100%;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .background-video {
@@ -117,15 +132,16 @@ export default {
 }
 
 .logo {
-  margin-top: 350px;
-  margin-bottom: -100px;
-  width: 600px;
+  width: 600px; /* Adjust the size of the logo */
+  margin-bottom: -100px; /* Add spacing between the logo and the form */
 }
 
 .login-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; /* Ensures that all children, including the link, are centered */
+  text-align: center; /* Ensures content within is centered */
 }
 
 .login-form {
@@ -133,6 +149,7 @@ export default {
   flex-direction: column;
   gap: 10px;
   border-radius: 8px;
+  text-align: center; /* Centers text inside the form */
 }
 
 .login-form input {
@@ -155,5 +172,19 @@ export default {
 
 .login-form button:hover {
   background-color: darkred;
+}
+
+.video-attribution {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  font-size: 12px;
+  z-index: 3; 
+}
+
+.video-attribution a {
+  color: white;
+  text-decoration: underline;
 }
 </style>

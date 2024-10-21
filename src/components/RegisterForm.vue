@@ -4,9 +4,10 @@
       <input type="text" v-model="username" placeholder="Username" required />
       <input type="password" v-model="password" placeholder="Password" required minlength="8" />
       <input type="password" v-model="passwordConfirm" placeholder="Confirm Password" required minlength="8" />
-      <button type="submit">Save Credentials</button>
+      <button type="submit">Create Account</button>
     </form>
     <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
+    <p @click="$emit('switchToLogin')" class="back-to-login">Back to login?</p>
   </div>
 </template>
 
@@ -108,4 +109,17 @@ export default {
 .register-form button:hover {
   background-color: darkred;
 }
+
+.back-to-login {
+  cursor: pointer;
+  color: #007BFF;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.back-to-login:hover {
+  text-decoration: underline;
+}
+
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <img src="../assets/TS.png" alt="Time Solo Logo" class="logo" />
+    <img src="../assets/images/TS2.png" alt="Time Solo Logo" class="logo" />
   </template>
   
   <style scoped>

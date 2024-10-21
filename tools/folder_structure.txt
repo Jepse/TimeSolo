@@ -24,15 +24,36 @@ TimeSolo/
         router.js
         style.css
         assets/
-            clockBG.mp4
-            success.png
-            success.png~
-            TS.png
+            characters/
+                character1.glb
+                character2.glb
+                character3.glb
+            icons/
+                expand.svg
+                minimize.svg
+            images/
+                settingsPng.png
+                TS2.png
+            videos/
+                enchantedBG.mp4
         components/
             Home.vue
             Login.vue
             Logo.vue
             RegisterForm.vue
+            canvas/
+                canvas3D.vue
+            menu/
+                Menu.vue
+                buttons/
+                    Achievements.vue
+                    Inventory.vue
+                    Quests.vue
+                    Settings.vue
+                    Skills.vue
+                    Socials.vue
+            timeline/
+                Timeline.vue
     tools/
         folder_structure.txt
         repoMap.py
