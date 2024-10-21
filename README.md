@@ -1,5 +1,3 @@
-# Time Solo 
-
 ![Login](https://github.com/user-attachments/assets/95f81a02-1683-475e-8429-d3b8dc029e7f)
 
 
