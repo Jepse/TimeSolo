@@ -7,29 +7,17 @@
 
 ## Concept Overview
 - **Age = Levels**: Progress through life like gaining levels in an MMORPG.
+- **Timeline**: An interactive timeline shows users their achievements, similar to a character's journey.
 - **Life Goals = Quests**: Set and achieve meaningful objectives as life quests.
 - **Net Worth = Inventory**: Manage finances like an in-game inventory.
 - **Relationships = Social Panel**: Maintain and improve relationships as part of the game.
-- **Timeline**: An interactive timeline shows users their achievements, similar to a character's journey.
+
 
 ## Features
 - **Gamified Life Management**: View your real-world growth through game-like mechanics.
 - **Interactive Timeline**: Track your achievements and progress visually.
 - **Data Security**: Full local data control, with no personal information shared online unless exported.
 - **Cross-Platform Portability**: Planned import/export functionality to transition data between PC and future mobile versions.
-
-## Stack - Self Hosted, Offline & Open Source
-- **Front-end**: Vue 3
-- **Back-end**: Pocketbase (self-hostable backend)
-- **Desktop Framework**: Electron
-- **Graphics**: Three.js (for interactive 3D elements)
-
-## Development Roadmap
-### Initial Setup and Development
-1. Set up the GitHub repository and initialize the project using Vue 3.
-2. Integrate Pocketbase for backend functionality.
-3. Configure Electron to package the app as a desktop executable.
-4. Set up Three.js to create an immersive user experience.
 
 ### Core Feature Implementation
 1. **User Authentication**: Set up basic authentication and data management with Pocketbase.
@@ -45,7 +33,6 @@
 2. Ensure data consistency during transfers.
 
 ## Plans
-- Release a beta version for PC and gather user feedback.
 - Iterate and improve based on user experience.
 - Expand to mobile platforms with cross-device data support.
 
