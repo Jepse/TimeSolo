@@ -44,23 +44,9 @@
     <!-- Menu section -->
     <div
       v-if="expandedSection !== 'canvas' && expandedSection !== 'timeline'"
-      :class="['menu-container', 'fade-in', expandedSection === 'menu' ? 'full-view' : '']"
+      :class="['menu-container', 'fade-in']"
     >
       <Menu />
-      <img
-        v-if="expandedSection === 'menu'"
-        @click="toggleExpand('menu')"
-        src="../assets/icons/minimize.svg"
-        alt="Minimize"
-        class="action-icon"
-      />
-      <img
-        v-else
-        @click="toggleExpand('menu')"
-        src="../assets/icons/expand.svg"
-        alt="Expand"
-        class="action-icon"
-      />
     </div>
   </div>
 </template>
