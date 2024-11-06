@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'Socials',
+  name: 'Account',
 };
 </script>
 

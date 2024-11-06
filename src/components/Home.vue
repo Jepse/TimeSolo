@@ -6,14 +6,14 @@
       <img
         v-if="expandedSection === 'canvas'"
         @click="toggleExpand('canvas')"
-        src="../assets/icons/minimize.svg"
+        src="../assets/icons/Icon_Exit.png"
         alt="Minimize"
         class="action-icon"
       />
       <img
         v-else
         @click="toggleExpand('canvas')"
-        src="../assets/icons/expand.svg"
+        src="../assets/icons/Icon_Expand.png"
         alt="Expand"
         class="action-icon"
       />
@@ -28,14 +28,14 @@
       <img
         v-if="expandedSection === 'timeline'"
         @click="toggleExpand('timeline')"
-        src="../assets/icons/minimize.svg"
+        src="../assets/icons/Icon_Exit.png"
         alt="Minimize"
         class="action-icon"
       />
       <img
         v-else
         @click="toggleExpand('timeline')"
-        src="../assets/icons/expand.svg"
+        src="../assets/icons/Icon_Expand.png"
         alt="Expand"
         class="action-icon"
       />

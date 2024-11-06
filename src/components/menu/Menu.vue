@@ -1,22 +1,42 @@
 <template>
-  <div class="menu-container">
-    <button>
-      <img src="../../assets/images/AchievementsPng.png" alt="Achievements" />
+<div class="menu-container">
+  <router-link to="/achievements">
+      <button>
+        <img src="../../assets/icons/Icon_Award.png" alt="Achievements" />
+      </button>
+    </router-link>
+    <router-link to="/inventory">
+      <button>
+        <img src="../../assets/icons/Icon_BackPack.png" alt="Inventory" />
+      </button>
+    </router-link>
+    <router-link to="/quests">
+      <button>
+        <img src="../../assets/icons/Icon_Exclamation.png" alt="Quests" />
+      </button>
+    </router-link>
+    <router-link to="/socials">
+      <button>
+        <img src="../../assets/icons/Icon_Heart.png" alt="Socials" />
+      </button>
+    </router-link>
+    <router-link to="/skills">
+      <button>
+        <img src="../../assets/icons/Icon_Key.png" alt="Skills" />
+      </button>
+    </router-link>
+    <router-link to="/account">
+      <button>
+        <img src="../../assets/icons/Icon_Ghost.png" alt="Account" />
+      </button>
+    </router-link>
+  </div>
+  <div class="bottom-right-container">
+    <button class="small-button">
+      <img src="../../assets/icons/Icon_Settings.png" alt="Settings" />
     </button>
-    <button>
-      <img src="../../assets/images/InventoryPng.png" alt="Inventory" />
-    </button>
-    <button>
-      <img src="../../assets/images/QuestsPng.png" alt="Quests" />
-    </button>
-    <button>
-      <img src="../../assets/images/SocialsPng.png" alt="Socials" />
-    </button>
-    <button>
-      <img src="../../assets/images/SkillsPng.png" alt="Skills" />
-    </button>
-    <button @click="logout">
-      <img src="../../assets/images/SettingsPng.png" alt="Settings" />
+    <button class="small-button" @click="logout">
+      <img src="../../assets/icons/Icon_Power.png" alt="Logout" />
     </button>
   </div>
 </template>
@@ -29,8 +49,7 @@ export default {
   name: 'Menu',
   setup() {
     const router = useRouter();
-    const pb = new PocketBase('http://127.0.0.1:8090'); // Adjust the URL as needed
-
+    const pb = new PocketBase('http://127.0.0.1:8090');
     const logout = async () => {
       try {
         await pb.authStore.clear();
@@ -57,6 +76,14 @@ export default {
   gap: 50px;
 }
 
+.bottom-right-container {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 20px;
+}
+
 button {
   background: none;
   border: none;
@@ -65,7 +92,12 @@ button {
 }
 
 button img {
-  width: 128px; 
-  height: auto;
+  max-width: 128px; 
+  height: 128px;
+}
+
+.small-button img {
+  max-width: 64px; 
+  height: 64px;
 }
 </style>

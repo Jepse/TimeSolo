@@ -52,7 +52,7 @@ export default {
 
       // Position the camera
       camera.position.z = 1.5;
-      camera.position.y = 1.2;
+      camera.position.y = 1;
 
       // Animation loop
       const animate = () => {
