@@ -18,4 +18,6 @@ Mentorship is lacking in modern society, i think LLMs trained and prompted to he
 ### Tech Stack & Drawboard
 
 Pocketbase as a backend & DB, Vue frontend with ThreeJS(looking at Babylon for better WebGPU support), Readyplayerme web integration.
+Here is a very crude and painted over lobby in it's humble beginning stage:
+
 ![LobbyDev](https://github.com/user-attachments/assets/a9c9db9b-2aa2-4153-bff7-6f252afcf52e)
