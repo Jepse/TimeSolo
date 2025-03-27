@@ -1,9 +1,5 @@
 <template>
   <div class="login-page">
-    <!-- Attribution -->
-    <div class="video-attribution">
-      Background by <a href="https://pixabay.com/users/dangrafart-8220761/?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=202844">Daniel</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=202844">Pixabay</a>
-    </div>
     <!-- Background Video -->
     <video autoplay loop muted class="background-video" :style="{ opacity: videoOpacity, transition: 'opacity 1s' }">
       <source src="../assets/videos/enchantedBG.mp4" type="video/mp4" />
@@ -133,7 +129,7 @@ export default {
 
 .logo {
   width: 600px; /* Adjust the size of the logo */
-  margin-bottom: -100px; /* Add spacing between the logo and the form */
+  margin-bottom: 25px; /* Add spacing between the logo and the form */
 }
 
 .login-container {

@@ -1,37 +1,21 @@
 ![Login](https://github.com/user-attachments/assets/95f81a02-1683-475e-8429-d3b8dc029e7f)
 
-
 **Time Solo** is a gamified productivity and personal development app that draws parallels between real life and MMORPG games, encouraging users to view personal growth as leveling up, achieving goals as completing quests, and building wealth and relationships as managing inventory and social panels. It makes personal development engaging by turning life's journey into a game experience, and turning yourself into the main character. Every decision and achievement is a step towards leveling up...
 
-## Concept Overview
-- **Age = Levels**: Progress through life like gaining levels in an MMORPG.
-- **Timeline**: An interactive timeline shows users their achievements, similar to a character's journey.
-- **Life Goals = Quests**: Set and achieve meaningful objectives as life quests.
-- **Net Worth = Inventory**: Manage finances like an in-game inventory.
-- **Relationships = Social Panel**: Maintain and improve relationships as part of the game.
-
-
-## Features
-- **Gamified Life Management**: View your real-world growth through game-like mechanics.
-- **Interactive Timeline**: Track your achievements and progress visually.
-- **Data Security**: Full local data control, with no personal information shared online unless exported.
-- **Cross-Platform Portability**: Planned import/export functionality to transition data between PC and future mobile versions.
-
-### Core Feature Implementation
-1. **Gamification Elements**: Develop features for levels, quests, inventory, and social panels.
-2. **Timeline Interface**: Implement an interactive timeline to visualize progress.
-
-### Data Security & Testing
-1. Implement data encryption to ensure privacy.
-2. Test both online and offline modes for smooth operation.
-
-### Export/Import Features
-1. Develop export and import features for portability.
-2. Ensure data consistency during transfers.
-
 ## Plans
-- Iterate and improve based on user experience.
-- Expand to mobile platforms with cross-device data support.
+- **Gamified Life Management**: View your growth through game-like mechanics.
+- **Interactive Timeline**: Track your skill levels, achievements and quests progress in real time.
+- **Data Security**: No personal information gathered or shared(serveless app) unless exported or shared by users.
+- **Gamification Elements**: Attractive features for levels, quests, inventory, skills, etc.
+- **Timeline Interface**: A interactive timeline that with a purpose.
+##
 
-## License
-This project is licensed under the MIT License.
+### Idea ⭐
+
+Mentorship is lacking in modern society, i think LLMs trained and prompted to help the youth figure out how this world works is one of the best use cases. 
+
+
+### Tech Stack & Drawboard
+
+Pocketbase as a backend & DB, Vue frontend with ThreeJS(looking at Babylon for better WebGPU support), Readyplayerme web integration.
+![LobbyDev](https://github.com/user-attachments/assets/a9c9db9b-2aa2-4153-bff7-6f252afcf52e)
